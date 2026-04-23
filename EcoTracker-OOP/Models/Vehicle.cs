@@ -1,22 +1,30 @@
 ﻿using System;
 
 namespace EcoTracker_OOP.Models
-
 {
-
     public class Vehicle : EmissionSource
     {
-   
-        private const double EmissionFactor = 0.21;
+        // المعامل هنا ممكن نخليه يتغير حسب نوع الوقود
+        public double EmissionFactor { get; set; } = 0.21;
 
-        public Vehicle(double distance) : base("Vehicle Transport", distance)  
+        public string VehicleType { get; set; } 
+        public string FuelType { get; set; }    
+        public Vehicle(string name, double distance, double factor) : base(name, distance)
         {
+            this.EmissionFactor = factor;
         }
 
         public override double CalculateCarbon()
         {
-            return ConsumpitionValue * EmissionFactor;
+            
+            return ConsumptionValue * EmissionFactor;
+        }
+
+        
+        public override string GetSummary()
+        {
+            // :F2 (هيثبت عدد الرقام من بعد العلامه هيبقى (2
+            return $"Transport: {SourceName} ({VehicleType}) - Distance: {ConsumptionValue} km";
         }
     }
 }
-
