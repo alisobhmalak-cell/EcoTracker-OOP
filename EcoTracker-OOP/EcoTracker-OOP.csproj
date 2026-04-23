@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{EAE9AB3F-6AB1-4ECE-AC6E-81853922B76D}</ProjectGuid>
+    <ProjectGuid>{72E386D2-E404-EB9E-05CE-B6ECE9B9C3F6}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>EcoTracker_OOP</RootNamespace>
     <AssemblyName>EcoTracker-OOP</AssemblyName>
