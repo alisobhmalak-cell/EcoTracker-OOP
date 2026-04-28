@@ -2,20 +2,13 @@
 
 namespace EcoTracker_OOP.Models
 {
-    public abstract class EmissionSource
-    {
-        public string SourceName { get; set; }
-        public double ConsumptionValue { get; set; }
-        public abstract double CalculateCarbon();
-    }
-
     public enum WasteType { Plastic, Paper, Glass, FoodWaste, Metal, Electronics, Mixed }
 
     public class Waste : EmissionSource
     {
         public WasteType MyType { get; set; }
 
-        public Waste(WasteType type, double weight)
+        public Waste(WasteType type, double weight) : base("Waste", weight)
         {
             this.MyType = type;
             this.ConsumptionValue = weight;

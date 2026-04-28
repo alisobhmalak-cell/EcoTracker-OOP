@@ -6,7 +6,25 @@ using System.Threading.Tasks;
 
 namespace EcoTracker_OOP.Models
 {
-    internal class EmissionSource
-    {
-    }
+        public abstract class EmissionSource
+        {
+
+            public string SourceName { get; set; }
+            public double ConsumptionValue { get; set; }
+            public EmissionSource(string name, double value)
+            {
+                this.SourceName = name;
+                this.ConsumptionValue = value;
+            }
+
+
+            public abstract double CalculateCarbon();
+
+
+            public virtual string GetSummary()
+            {
+                return $"{SourceName}: {CalculateCarbon():F2} kg CO2";
+            }
+        }
+
 }
