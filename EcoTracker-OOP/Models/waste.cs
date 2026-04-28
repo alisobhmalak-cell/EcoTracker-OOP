@@ -9,7 +9,7 @@ namespace EcoTracker_OOP.Models
         public abstract double CalculateCarbon();
     }
 
-    public enum WasteType { Plastic, Paper, Glass, FoodWaste }
+    public enum WasteType { Plastic, Paper, Glass, FoodWaste, Metal, Electronics, Mixed }
 
     public class Waste : EmissionSource
     {
@@ -17,9 +17,9 @@ namespace EcoTracker_OOP.Models
 
         public Waste(WasteType type, double weight)
         {
-            this.SourceName = "Waste Section";
             this.MyType = type;
             this.ConsumptionValue = weight;
+            this.SourceName = "Waste: " + type.ToString();
         }
 
         public override double CalculateCarbon()
@@ -31,8 +31,15 @@ namespace EcoTracker_OOP.Models
                 case WasteType.Paper: factor = 0.5; break;
                 case WasteType.Glass: factor = 0.2; break;
                 case WasteType.FoodWaste: factor = 0.1; break;
+                case WasteType.Metal: factor = 1.8; break;       
+                case WasteType.Electronics: factor = 3.5; break; 
+                case WasteType.Mixed: factor = 1.2; break;     
             }
             return ConsumptionValue * factor;
+        }
+        public override string GetSummary()
+        {
+            return $"[Waste] Material: {MyType}, Weight: {ConsumptionValue} kg - Carbon Footprint: {CalculateCarbon():F2} kg CO2";
         }
     }
 }
