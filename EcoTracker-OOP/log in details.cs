@@ -22,5 +22,10 @@ namespace EcoTracker_OOP
             MessageBox.Show("Success lig in");
            
         }
+
+        private void log_in_details_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
