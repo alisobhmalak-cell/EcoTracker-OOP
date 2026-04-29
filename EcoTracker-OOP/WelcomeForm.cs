@@ -21,7 +21,17 @@ namespace EcoTracker_OOP
 
         private void button1_Click(object sender, EventArgs e)
         {
+           
+            // 1. إنشاء نسخة من شاشة اللوجن
+            // تأكدي أن الاسم هو log_in_details كما يظهر في ملفاتك
+            log_in_details loginPage = new log_in_details();
 
+            // 2. إظهار شاشة اللوجن
+            loginPage.Show();
+
+            // 3. إخفاء شاشة الـ Welcome الحالية
+            this.Hide();
+        
         }
 
         private void WelcomeForm_Load(object sender, EventArgs e)

@@ -19,12 +19,8 @@ namespace EcoTracker_OOP
 
         private void button1_Click(object sender, EventArgs e)
         {
-            // 1. إخفاء شاشة تسجيل الدخول
-            this.Hide();
-
-            // 2. فتح شاشة النجاح
-            success_log_in successPage = new success_log_in();
-            successPage.Show();
+            MessageBox.Show("Success lig in");
+           
         }
     }
 }
