@@ -73,6 +73,16 @@ namespace EcoTracker_OOP.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap back1 {
+            get {
+                object obj = ResourceManager.GetObject("back1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap WhatsApp_Image_2026_04_29_at_5_17_27_PM {
             get {
                 object obj = ResourceManager.GetObject("WhatsApp Image 2026-04-29 at 5.17.27 PM", resourceCulture);

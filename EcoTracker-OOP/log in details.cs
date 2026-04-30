@@ -19,13 +19,28 @@ namespace EcoTracker_OOP
 
         private void button1_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Success lig in");
+            MessageBox.Show("Success log in");
            
         }
 
         private void log_in_details_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void log_in_details_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
