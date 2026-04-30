@@ -25,7 +25,12 @@ namespace EcoTracker_OOP
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-
+            cmbDevice.DataSource = Enum.GetValues(typeof(DeviceType));
+            cmbWasteType.DataSource = Enum.GetValues(typeof(WasteType));
+            cmbTransportType.DataSource = Enum.GetValues(typeof(VehicleType));
+            cmbDevice.SelectedIndex = -1;
+            cmbWasteType.SelectedIndex = -1;
+            cmbTransportType.SelectedIndex = -1;
         }
 
 
@@ -48,11 +53,11 @@ namespace EcoTracker_OOP
                 Electricity electricityEntry = new Electricity(selectedDevice, hours);
 
                 // 4. عرض النتيجة
-                MessageBox.Show(electricityEntry.GetSummary(), "نتائج استهلاك الكهرباء");
+                MessageBox.Show(electricityEntry.GetSummary(), "Electricity Consumption Results");
             }
             catch (Exception ex)
             {
-                MessageBox.Show("تأكدي من إدخال البيانات بشكل صحيح : " + ex.Message);
+                MessageBox.Show(" Please Enter Correct Data: " + ex.Message);
             }
         }
 
@@ -72,12 +77,12 @@ namespace EcoTracker_OOP
                 Waste wasteCalc = new Waste(selectedWaste, weight);
 
                 // 4. عرض ملخص النتائج في رسالة تنبثق للمستخدم
-                MessageBox.Show(wasteCalc.GetSummary(), "نتائج النفايات");
+                MessageBox.Show(wasteCalc.GetSummary(), "Waste Consumption Results");
             }
             catch (Exception ex)
             {
                 // عرض رسالة تنبيه في حال وجود خطأ في إدخال البيانات
-                MessageBox.Show("يرجى التأكد من الاختيارات : " + ex.Message);
+                MessageBox.Show("Please Enter Correct Data: " + ex.Message);
             }
         }
         
@@ -98,16 +103,41 @@ namespace EcoTracker_OOP
                 Vehicle vehicleCalc = new Vehicle(selectedVehicle, distance);
 
                 // عرض ملخص النتائج في رسالة
-                MessageBox.Show(vehicleCalc.GetSummary(), "نتائج انبعاثات النقل");
+                MessageBox.Show(vehicleCalc.GetSummary(), "Vehicle Consumption Results");
             }
             catch (Exception ex)
             {
                 // عرض رسالة خطأ في حال إدخال بيانات غير صحيحة
-                MessageBox.Show("خطأ في البيانات: " + ex.Message);
+                MessageBox.Show("Please Enter Correct Data: " + ex.Message);
             }
         }
 
         private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox3_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtWeight_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmbWasteType_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

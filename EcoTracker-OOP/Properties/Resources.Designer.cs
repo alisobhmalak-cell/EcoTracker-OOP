@@ -89,5 +89,25 @@ namespace EcoTracker_OOP.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap WhatsApp_Image_2026_04_30_at_4_24_44_AM {
+            get {
+                object obj = ResourceManager.GetObject("WhatsApp Image 2026-04-30 at 4.24.44 AM", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap WhatsApp_Image_2026_04_30_at_4_241 {
+            get {
+                object obj = ResourceManager.GetObject("WhatsApp Image 2026-04-30 at 4.241", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }
