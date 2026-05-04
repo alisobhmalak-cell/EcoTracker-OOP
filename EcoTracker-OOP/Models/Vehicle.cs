@@ -5,7 +5,7 @@ namespace EcoTracker_OOP.Models
     public enum VehicleType { Petrol_Car, Diesel_Car, Electric_Car, Petrol_Bus, Diesel_Bus, Motorcycle, Truck }
     public class Vehicle : EmissionSource
     {
-       
+
         public VehicleType MyVehicleType { get; set; }
         public Vehicle(VehicleType type, double distance) : base("Transport", distance)
         {
@@ -19,7 +19,7 @@ namespace EcoTracker_OOP.Models
             {
                 case VehicleType.Petrol_Car: factor = 0.21; break;
                 case VehicleType.Diesel_Car: factor = 0.18; break;
-                case VehicleType.Electric_Car: factor = 0.05; break; 
+                case VehicleType.Electric_Car: factor = 0.05; break;
                 case VehicleType.Motorcycle: factor = 0.1; break;
                 case VehicleType.Petrol_Bus: factor = 0.85; break;
                 case VehicleType.Diesel_Bus: factor = 0.8; break;

@@ -24,9 +24,9 @@ namespace EcoTracker_OOP.Models
                 case WasteType.Paper: factor = 0.5; break;
                 case WasteType.Glass: factor = 0.2; break;
                 case WasteType.FoodWaste: factor = 0.1; break;
-                case WasteType.Metal: factor = 1.8; break;       
-                case WasteType.Electronics: factor = 3.5; break; 
-                case WasteType.Mixed: factor = 1.2; break;     
+                case WasteType.Metal: factor = 1.8; break;
+                case WasteType.Electronics: factor = 3.5; break;
+                case WasteType.Mixed: factor = 1.2; break;
             }
             return ConsumptionValue * factor;
         }

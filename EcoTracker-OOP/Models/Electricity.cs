@@ -13,7 +13,7 @@ namespace EcoTracker_OOP.Models
     public class Electricity : EmissionSource
     {
 
-       
+
         public Electricity(DeviceType device, double hours) : base("Electricity", hours)
         {
             this.MyDevice = device;
@@ -21,11 +21,11 @@ namespace EcoTracker_OOP.Models
             this.SourceName = "Device: " + device.ToString();
         }
 
-        
+
         public DeviceType MyDevice { get; set; }
         public double UsageHours { get; set; }
 
-        
+
         public override double CalculateCarbon()
         {
             double factor = 0;
@@ -46,13 +46,13 @@ namespace EcoTracker_OOP.Models
                 case DeviceType.Bell: factor = 0.01; break;
                 default: factor = 0.1; break;
             }
-            
+
             return UsageHours * factor;
         }
-       
+
         public override string GetSummary()
         {
             return $"[Electricity] Device: {MyDevice}, Usage: {UsageHours} hours - Emissions: {CalculateCarbon():F2} kg CO2";
         }
-    } 
+    }
 }
