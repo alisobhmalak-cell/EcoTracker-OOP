@@ -13,7 +13,7 @@ namespace EcoTracker_OOP.Models
     public class Electricity : EmissionSource
     {
 
-        // constructor عشان نبعت البيانات للأب
+       
         public Electricity(DeviceType device, double hours) : base("Electricity", hours)
         {
             this.MyDevice = device;
@@ -21,11 +21,11 @@ namespace EcoTracker_OOP.Models
             this.SourceName = "Device: " + device.ToString();
         }
 
-        // خصائص الجهاز(propertise)
+        
         public DeviceType MyDevice { get; set; }
         public double UsageHours { get; set; }
 
-        // 3. دالة الحساب الموحدة (Override)
+        
         public override double CalculateCarbon()
         {
             double factor = 0;
@@ -49,7 +49,7 @@ namespace EcoTracker_OOP.Models
             
             return UsageHours * factor;
         }
-        // :F2 (هيثبت عدد الرقام من بعد العلامه العشريه هيبقى (2
+       
         public override string GetSummary()
         {
             return $"[Electricity] Device: {MyDevice}, Usage: {UsageHours} hours - Emissions: {CalculateCarbon():F2} kg CO2";

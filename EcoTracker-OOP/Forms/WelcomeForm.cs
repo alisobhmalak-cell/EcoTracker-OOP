@@ -22,30 +22,28 @@ namespace EcoTracker_OOP
         private void button1_Click(object sender, EventArgs e)
         {
            
-            // 1. إنشاء نسخة من شاشة اللوجن
-            // تأكدي أن الاسم هو log_in_details كما يظهر في ملفاتك
+            
             log_in_details loginPage = new log_in_details();
 
-            // 2. إظهار شاشة اللوجن
+            
             loginPage.Show();
 
-            // 3. إخفاء شاشة الـ Welcome الحالية
+           
             this.Hide();
         
         }
 
         private void WelcomeForm_Load(object sender, EventArgs e)
         {
-            // بنخلي الصورة هي الحاضن (Parent) للزراير عشان الشفافية تشتغل صح
-            button1.Parent = pictureBox1; // استبدلي button1 باسم الزرار الأول عندك
-            button2.Parent = pictureBox1; // ده زرار Close اللي إنتِ عاملاه
+            
+            button1.Parent = pictureBox1;
+            button2.Parent = pictureBox1; 
 
-            // بنخلي الخلفية شفافة
+           
             button1.BackColor = Color.Transparent;
             button2.BackColor = Color.Transparent;
 
-            // ملحوظة: لو الزراير مكانها اتغير أو اختفت، هنحتاج نظبط الـ Location يدوي
-            // button2.Location = new Point(700, 10); // مثال لمكان زرار القفل
+            
         }
 
         private void button2_Click(object sender, EventArgs e)

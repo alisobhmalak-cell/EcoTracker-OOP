@@ -5,7 +5,7 @@ namespace EcoTracker_OOP.Models
     public enum VehicleType { Petrol_Car, Diesel_Car, Electric_Car, Petrol_Bus, Diesel_Bus, Motorcycle, Truck }
     public class Vehicle : EmissionSource
     {
-        // المعامل هنا ممكن نخليه يتغير حسب نوع الوقود
+       
         public VehicleType MyVehicleType { get; set; }
         public Vehicle(VehicleType type, double distance) : base("Transport", distance)
         {

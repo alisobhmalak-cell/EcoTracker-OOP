@@ -82,6 +82,7 @@
             this.textBox2.Size = new System.Drawing.Size(272, 27);
             this.textBox2.TabIndex = 5;
             this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            this.textBox2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox2_KeyPress);
             // 
             // textBox3
             // 

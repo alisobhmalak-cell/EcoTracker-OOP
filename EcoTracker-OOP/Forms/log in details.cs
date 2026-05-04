@@ -13,28 +13,32 @@ namespace EcoTracker_OOP
 {
     public partial class log_in_details : Form
     {
+        private ErrorProvider errorProvider1;
+
         public log_in_details()
         {
             InitializeComponent();
+
+            // Ensure errorProvider1 exists and is associated with this form.
+            errorProvider1 = new ErrorProvider();
+            errorProvider1.ContainerControl = this;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
           
         
-            // 1. التحقق من أن الخانات ليست فارغة
-            // استبدلي textBox2 و textBox3 و textBox1 بالأسماء اللي عندك في الـ Design
             if (string.IsNullOrWhiteSpace(textBox2.Text) ||
                 string.IsNullOrWhiteSpace(textBox3.Text) ||
                 string.IsNullOrWhiteSpace(textBox1.Text))
             {
-                // لو فيه خانة فاضية، أظهر رسالة تحذير ووقف الكود هنا
+               
                 MessageBox.Show("Please fill in all the details (Name, Email, and Password) first!",
                                 "Missing Information", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
-                // 2. لو البيانات كاملة، نفذ عملية الانتقال
+                
                 MessageBox.Show("Success! Your account has been created.", "Verdix Eco-Tracker");
 
                 MainForm mainPage = new MainForm();
@@ -68,5 +72,25 @@ namespace EcoTracker_OOP
         {
 
         }
+
+        private void textBox2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+           
+        
+           
+            if (char.IsDigit(e.KeyChar))
+            {
+               
+                e.Handled = true;
+
+               
+                errorProvider1.SetError(textBox2, "Names cannot contain numbers!");
+            }
+            else
+            {
+                errorProvider1.SetError(textBox2, "");
+            }
+        }
     }
+    
 }
